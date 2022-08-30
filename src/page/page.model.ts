@@ -1,12 +1,13 @@
-export enum TopLevelCategory {
+export enum PageLevelCategory {
     Courses,
     Services,
     Books,
     Products
 }
 
-export class TopPageModel {
-    firstLevelCategory: TopLevelCategory;
+export class PageModel {
+    _id: string;
+    firstLevelCategory: PageLevelCategory;
     secondLeveCategory: string;
     title: string;
     hh?: {
