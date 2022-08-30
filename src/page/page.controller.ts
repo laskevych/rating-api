@@ -17,7 +17,7 @@ export class PageController {
 
     @Delete(':id')
     async delete(@Param('id') id: string) {
-
+ 
     }
 
     @Patch(':id')
