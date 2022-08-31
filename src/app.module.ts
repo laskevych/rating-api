@@ -26,13 +26,13 @@ import { ReviewModule } from './review/review.module';
     PageModule,
     ReviewModule
   ],
-  controllers: [
-    AppController, 
-    AuthController, 
-    ProductController, 
-    ReviewController, 
-    PageController
-  ],
+  // controllers: [
+  //   AppController, 
+  //   AuthController, 
+  //   ProductController, 
+  //   ReviewController, 
+  //   PageController
+  // ],
   providers: [AppService],
 })
 export class AppModule {}
