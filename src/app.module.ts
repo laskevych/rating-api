@@ -8,6 +8,10 @@ import { PageController } from './page/page.controller';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { getMongoConfig } from './configs/mongo.config';
+import { AuthModule } from './auth/auth.module';
+import { ProductModule } from './product/product.module';
+import { PageModule } from './page/page.module';
+import { ReviewModule } from './review/review.module';
 
 @Module({
   imports: [
@@ -16,7 +20,11 @@ import { getMongoConfig } from './configs/mongo.config';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: getMongoConfig
-    })
+    }),
+    AuthModule,
+    ProductModule,
+    PageModule,
+    ReviewModule
   ],
   controllers: [
     AppController, 
