@@ -5,12 +5,20 @@ import { AuthController } from './auth/auth.controller';
 import { ProductController } from './product/product.controller';
 import { ReviewController } from './review/review.controller';
 import { PageController } from './page/page.controller';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { MongooseModule } from '@nestjs/mongoose';
+import { getMongoConfig } from './configs/mongo.config';
 
 @Module({
-  imports: [],
+  imports: [
+    ConfigModule.forRoot(),
+    MongooseModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: getMongoConfig
+    })
+  ],
   controllers: [
-    ConfigModule,
     AppController, 
     AuthController, 
     ProductController, 
