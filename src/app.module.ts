@@ -4,12 +4,19 @@ import { AppService } from './app.service';
 import { AuthController } from './auth/auth.controller';
 import { ProductController } from './product/product.controller';
 import { ReviewController } from './review/review.controller';
-import { TopPageController } from './top-page/top-page.controller';
 import { PageController } from './page/page.controller';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [],
-  controllers: [AppController, AuthController, ProductController, ReviewController, TopPageController, PageController],
+  controllers: [
+    ConfigModule,
+    AppController, 
+    AuthController, 
+    ProductController, 
+    ReviewController, 
+    PageController
+  ],
   providers: [AppService],
 })
 export class AppModule {}
