@@ -8,6 +8,11 @@ export class ReviewController {
 
     constructor(private reviewService: ReviewService) {}
 
+    // @Get(':id')
+    // async get(@Param('id') id: string) {
+    //     return this.reviewService.
+    // }
+    
     @Post('create')
     async create(@Body() dto: CreateReviewDto) {
         return this.reviewService.create(dto);
