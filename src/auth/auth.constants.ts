@@ -1,0 +1,1 @@
+export const USER_EXIST = 'User is exist.';
